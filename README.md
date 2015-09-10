@@ -11,3 +11,16 @@ Easy & Custom pack for develoment api and microservices based in PHP, use a mixe
  - Runn Runn and Test.
 
 
+
+
+#EasyApi Use 
+
+ - PHP
+ - MySQL
+ - OOP
+ - Functional Programing
+ - Factory Pattern
+ - Object Injected
+ - Routing Dinamic
+ 
+Beauty V0 Beta. jejeje
