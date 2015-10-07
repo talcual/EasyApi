@@ -24,3 +24,7 @@ Easy & Custom pack for develoment api and microservices based in PHP, use a mixe
  - Routing Dinamic
  
 Beauty V0 Beta. jejeje
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/talcual/easyapi/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
