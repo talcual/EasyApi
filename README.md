@@ -11,6 +11,11 @@ Easy & Custom pack for develoment api and microservices based in PHP, use a mixe
  - Runn Runn and Test.
 
 
+#My Powers
+ - Friendly with Ionic Apps.
+ - Fast.
+ - Add Your Power.
+
 
 
 #EasyApi Use 
