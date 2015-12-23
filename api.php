@@ -18,6 +18,7 @@
 
  define('LIBS', 'libs');
  $qs      = $_SERVER['QUERY_STRING'];
+ $config = ['appserver' => 'ionic'];
  $factory = array();
  $library = array(
   'mixing' => '',
