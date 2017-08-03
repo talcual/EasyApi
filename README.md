@@ -9,13 +9,18 @@ Easy & Custom pack for develoment api and microservices based in PHP, use a mixe
  - Place any libraries to use in libs forlder
  - Add a classname in the array at the api.php file 
  - Runn Runn and Test.
+ - Edit EasyAuth.php in the config folder, change $secret, this variable is the seed of security encrypt
 
 
 #My Powers
  - Friendly with Ionic Apps.
  - Fast.
  - Add Your Power.
+ - JWT Support - New
 
+
+#Notices for JWT
+Request to jwtgenerate for generate the token, this token have a TTL by default in one hour.
 
 
 #EasyApi Use 
@@ -27,9 +32,8 @@ Easy & Custom pack for develoment api and microservices based in PHP, use a mixe
  - Factory Pattern
  - Object Injected
  - Routing Dinamic
+ - JWT for PHP
  
 Beauty V0 Beta. jejeje
 
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/talcual/easyapi/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 

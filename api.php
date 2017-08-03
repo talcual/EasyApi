@@ -14,28 +14,33 @@
 
  ////// Definitions
   
- include 'config/config.php';
+ //include 'config/config.php';
 
  define('LIBS', 'libs');
  $qs      = $_SERVER['QUERY_STRING'];
- $config = ['appserver' => 'ionic'];
+ $config = ['appserver' => 'ionic', 'jwtenabled' => true];
  $factory = array();
  $library = array(
   'mixing' => '',
   'orm'    => $link
-  );
+ );
 
 ////// SimpleCore
  include 'config/_bootstrap.php';
+ include 'config/easyAuth.php';
 
 ////// Security Actions
  $onlypost = array('save','get');
 
 ////// Actions Zone
 
- function hello(){
+function hello(){
   GLOBAL $factory;
-  echo factory(null, 'mixing')->getHtml('html/index.html');
+  echo '?? lol ??';
+}
+
+function halo(){
+  echo '?? aloh ??';
 }
 
 function trucks($json = false){

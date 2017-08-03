@@ -50,6 +50,18 @@ function factory($libs, $get = ''){
   }
 }
 
+function jwtgenerate($data){
+  try {
+    echo Auth::SignIn($data);
+  } catch (Exception $e) {
+    echo $e;
+  }
+}
+
+function jwtcheck($tk){
+  return Auth::Check($tk);
+}
+
 // Runner Router
 function runner(){
  GLOBAL $onlypost, $qs, $config;
@@ -70,20 +82,47 @@ function runner(){
             header("Access-Control-Allow-Headers: {$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
             exit(0);
         }
-      }
+      } 
 
      $payload = file_get_contents("php://input");
      $data = json_decode($payload);
 
-     run($data->getting,$data->action);
+     // JSON WEB TOKENS CONTROL
+     if($config['jwtenabled']){
+       if($data->action == 'jwtgenerate'){
+          run($data->getting,$data->action);      
+       }else{
+         if(jwtcheck($data->toktok)){
+            run($data->getting,$data->action);
+         }
+       }
+     }else{
+        run($data->getting,$data->action);
+     }
+     
 
-  }else{
+  }else{ 
+
       if($_POST){
         $vars = parseVars($_POST);
-        if (in_array($vars['action'], $onlypost)) {
-          run($vars['getting'],$vars['action']);
+        if($config['jwtenabled']){
+            if($vars['action'] == 'jwtgenerate'){
+               run($vars['getting'],$vars['action']);      
+            }else{
+              if(jwtcheck($vars['toktok'])){
+                  if(in_array($vars['action'], $onlypost)) {
+                    run($vars['getting'],$vars['action']);
+                  }else{
+                    echo 'This is a D\'oh';
+                  }
+              }
+            }        
         }else{
-          echo 'This is a D\'oh';
+            if(in_array($vars['action'], $onlypost)) {
+              run($vars['getting'],$vars['action']);
+            }else{
+              echo 'This is a D\'oh';
+            }
         }
       }
 
