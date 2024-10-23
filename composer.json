@@ -1,0 +1,11 @@
+{
+    "require": {
+        "illuminate/database": "^11.29",
+        "laravel/serializable-closure": "^1.3"
+    },
+    "autoload": {
+       "classmap": [
+           "classes"
+        ]
+   }
+}
